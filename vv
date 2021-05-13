@@ -1,0 +1,8 @@
+#!/bin/sh
+findOutput=$(find . | ag -v '(vendor|node_modules|phpintel|debugbar|cache|.git/)' | peco)
+
+if [ ! -z "$findOutput" ]
+then
+    echo $findOutput
+    vim $findOutput
+fi
